@@ -16,11 +16,11 @@ void loop() {
   Serial.print("音量:");
   Serial.println(volume); // シリアルモニタに音量を表示
   if(volume > 20){
-    analogWrite(ledPin,0);
+    digitalWrite(ledPin,HIGH); // LEDが光る
     delay(3000); // 3000ms（3秒）待つ
   }
   else{
-    analogWrite(ledPin,random(16, 255));
+    digitalWrite(ledPin,LOW); // LEDを光らせない
     delay(100); // 100ms（0.1秒）待つ
   }
 }
